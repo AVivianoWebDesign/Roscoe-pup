@@ -2,182 +2,172 @@
 <html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Roscoe">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Roscoe">
 
-    <title>Roscoe</title>
+  <title>Roscoe</title>
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="jquery.flipster.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <style>    video {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
 
+  html,
+  body {
+    height: 100%;
+  }
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            -webkit-font-smoothing: antialiased;
-            -moz-font-smoothing: antialiased;
-            -o-font-smoothing: antialiased;
-            text-rendering: optimizeLegibility;
-        }
+  body {
+    margin: 0;
+  }
 
-        .container {
-            max-width: 400px;
-            width: 100%;
-            margin: 0 auto;
-            position: relative;
-        }
+  .viewport-header {
+    position: relative;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-        #contact input[type="text"],
-        #contact input[type="email"],
-        #contact input[type="tel"],
-        #contact textarea,
-        #contact button[type="submit"] {
-            font-family: Arial, Helvetica, sans-serif;
-        }
+  h1 {
+    font-family: 'Syncopate', sans-serif;
+    color: #4a3a27;
+    text-transform: uppercase;
+    letter-spacing: 3vw;
+    line-height: 1.2;
+    font-size: 3vw;
+    text-align: center;
+  }
 
-        #contact {
-            background: #F9F9F9;
-            padding: 25px;
-            margin: 150px 0;
-            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-        }
+  span {
+    display: block;
+    font-size: 10vw;
+    letter-spacing: -1.3vw;
+  }
 
-        #contact h3 {
-            display: block;
-            font-size: 30px;
-            font-weight: 300;
-            margin-bottom: 10px;
-        }
+  .content {
+    font-family: 'Syncopate', sans-serif;
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #4a3a27;
+    width: 100%;
+    padding: 20px;
+  }
 
-        #contact h4 {
-            margin: 5px 0 15px;
-            display: block;
-            font-size: 13px;
-            font-weight: 400;
-        }
+  #myBtn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+  }
 
-        fieldset {
-            border: medium none !important;
-            margin: 0 0 10px;
-            min-width: 100%;
-            padding: 0;
-            width: 100%;
-        }
+  #myBtn:hover {
+    background: #ddd;
+    color: black;
+  }
 
-        #contact input[type="text"],
-        #contact input[type="email"],
-        #contact input[type="tel"],
-        #contact textarea {
-            width: 100%;
-            border: 1px solid #ccc;
-            background: #FFF;
-            margin: 0 0 5px;
-            padding: 10px;
-        }
+  /*
 
-        #contact input[type="text"]:hover,
-        #contact input[type="email"]:hover,
-        #contact input[type="tel"]:hover,
-        #contact textarea:hover {
-            -webkit-transition:  0.3s ease-in-out;
-            -moz-transition:  0.3s ease-in-out;
-            transition:  0.3s ease-in-out;
-            border: 1px solid #aaa;
-        }
+- Fallback bokuh
+- webm?
+- poster=""
+- Full page always
+- Full page then scroll
+- Just header
+- Browser compat
 
-        #contact textarea {
-            height: 100px;
-            max-width: 100%;
-            resize: none;
-        }
+*/
+.dropbtn {
+background-color: #3498DB;
+color: white;
+padding: 16px;
+font-size: 16px;
+border: none;
+}
 
-        #contact button[type="submit"] {
-            cursor: pointer;
-            width: 100%;
-            border: none;
-            background: #4CAF50;
-            color: #FFF;
-            margin: 0 0 5px;
-            padding: 10px;
-            font-size: 15px;
-        }
+.dropup {
+position: relative;
+display: inline-block;
+}
 
-        #contact button[type="submit"]:hover {
-            background: #43A047;
-            -webkit-transition:  0.3s ease-in-out;
-            -moz-transition:  0.3s ease-in-out;
-            transition: 0.3s ease-in-out;
-        }
+.dropup-content {
+display: none;
+position: absolute;
+background-color: #f1f1f1;
+min-width: 160px;
+bottom: 50px;
+z-index: 1;
+}
 
-        #contact button[type="submit"]:active {
-            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
-        }
+.dropup-content a {
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+}
 
+.dropup-content a:hover {background-color: #ccc}
 
-        #contact input:focus,
-        #contact textarea:focus {
-            outline: 0;
-            border: 1px solid #aaa;
-        }
+.dropup:hover .dropup-content {
+display: block;
+}
 
-        ::-webkit-input-placeholder {
-            color: #888;
-        }
-
-        :-moz-placeholder {
-            color: #888;
-        }
-
-        ::-moz-placeholder {
-            color: #888;
-        }
-
-        :-ms-input-placeholder {
-            color: #888;
-        }
-    </style>
-
+.dropup:hover .dropbtn {
+background-color: #297fb9;
+}
+</style>
 </head>
-
 <body>
+<video autoplay muted loop id="bgvid">
+  <source src="images/65023932509__78F1804D-9ED9-409C-AAD8-98F6C6A7A629.MOV" type="video/webm">
+  <source src="images/65023932509__78F1804D-9ED9-409C-AAD8-98F6C6A7A629.MOV" type="video/mp4">
+</video>
+<header class="viewport-header">
+  <h1>
+    <span>ROSCOE</span>
+  </h1>
 
-    <header>
-        <div class="pill-nav">
-            <a class="active" href="index.html">Home</a>
-            <a href="Me.html">I'm Just Misunderstood</a>
-            <a href="About Me.html">About Me</a>
-            <a href="RoscoeContact.html">Meet Roscoe</a>
-        </div>
-    </header>
+</header>
 
-    <div class="container">
-        <form id="contact" action="" method="post">
-            <h3>Contact Roscoe</h3>
-            <fieldset>
-                <input placeholder="Your name" type="text" tabindex="1" required autofocus>
-            </fieldset>
-            <fieldset>
-                <input placeholder="Your Email Address" type="email" tabindex="2" required>
-            </fieldset>
-            <fieldset>
-                <input placeholder="Your Phone Number (optional)" type="tel" tabindex="3" required>
-            </fieldset>
-            <fieldset>
-                <textarea placeholder="Type your message here...." tabindex="5" required></textarea>
-            </fieldset>
-            <fieldset>
-                <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Meet Me</button>
-            </fieldset>
-        </form>
-    </div>
+<div class="content">
+  <h2>Freedom</h2>
+  <button id="myBtn" onclick="myFunction()">Pause</button>
+</div>
+
+<script>
+  var video = document.getElementById("bgvid");
+  var btn = document.getElementById("myBtn");
+
+  function myFunction() {
+    if (video.paused) {
+      video.play();
+      btn.innerHTML = "Pause";
+    } else {
+      video.pause();
+      btn.innerHTML = "Play";
+    }
+  }
+</script>
+
+<div class="dropup">
+<button class="dropbtn">Dropup</button>
+<div class="dropup-content">
+  <a href="index.html">Home</a>
+  <a href="Me.html">Roscoes</a>
+  <a href="About Me.html">About Me</a>
+  <a href="Roscoe.html">Play Time</a>
+</div>
+</div>
 
 </body>
-
-
 
 </html>
