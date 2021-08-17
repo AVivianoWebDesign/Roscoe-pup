@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Roscoe">
+  <link rel="stylesheet" href="style.css" type="text">
+
+  <title>Roscoe</title>
+
+  <style>
+    video {
+      object-fit: cover;
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    .viewport-header {
+      position: relative;
+      height: 100vh;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h1 {
+      font-family: 'Syncopate', sans-serif;
+      color: #4a3a27;
+      text-transform: uppercase;
+      letter-spacing: 3vw;
+      line-height: 1.2;
+      font-size: 3vw;
+      text-align: center;
+    }
+
+    span {
+      display: block;
+      font-size: 10vw;
+      letter-spacing: -1.3vw;
+    }
+
+    .content {
+      font-family: 'Syncopate', sans-serif;
+      position: fixed;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      color: #4a3a27;
+      width: 100%;
+      padding: 20px;
+    }
+
+    #myBtn {
+      width: 200px;
+      font-size: 18px;
+      padding: 10px;
+      border: none;
+      background: #000;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    #myBtn:hover {
+      background: #ddd;
+      color: black;
+    }
+
+    /*
+
+- Fallback bokuh
+- webm?
+- poster=""
+- Full page always
+- Full page then scroll
+- Just header
+- Browser compat
+
+*/
+.pill-nav a {
+    margin: 10px;
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+.pill-nav a:hover {
+    background-color: #d0d315fa;
+    color: black;
+}
+
+.pill-nav a.active {
+    background-color: #4a3a27;
+    color: white;
+}
+
+    @media only screen and (max-width: 600px) {
+
+      /* For tablets: */
+      .main {
+        width: 100%;
+        padding: 0;
+      }
+
+      .right {
+        width: 100%;
+      }
+    }
+
+    @media only screen and (max-width: 600px) {
+
+      /* For mobile phones: */
+      .menu,
+      .main,
+      .right {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <video autoplay muted loop id="bgvid">
+    <source src="images/65023932509__78F1804D-9ED9-409C-AAD8-98F6C6A7A629.MOV" type="video/webm">
+    <source src="images/65023932509__78F1804D-9ED9-409C-AAD8-98F6C6A7A629.MOV" type="video/mp4">
+  </video>
+  <header class="viewport-header">
+    <h1>
+      <span>ROSCOE</span>
+    </h1>
+
+  </header>
+
+  <div class="content">
+    <h2>Freedom</h2>
+    <button id="myBtn" onclick="myFunction()">Play</button>
+  </div>
+
+  <script>
+    var video = document.getElementById("bgvid");
+    var btn = document.getElementById("myBtn");
+
+    function myFunction() {
+      if (video.paused) {
+        video.play();
+        btn.innerHTML = "Pause";
+      } else {
+        video.pause();
+        btn.innerHTML = "Play";
+      }
+    }
+  </script>
+
+    <div class="pill-nav">
+      <a class="active" href="index.html">Home</a>
+      <a href="Me.html">Roscoes</a>
+      <a href="About Me.html">About Me</a>
+      <a href="Roscoe.html">Play Time</a>
+  </div>
+
+</body>
+
+</html>
