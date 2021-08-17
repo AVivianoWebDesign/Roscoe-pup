@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Roscoe">
+
+  <title>Roscoe</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-replace-svg="nest"></script>
+
+
+
+  <style>
+    video {
+      object-fit: cover;
+      width: 100vw;
+      height: 100vh;
+      position: center;
+      top: 0;
+      left: 0;
+    }
+
+    .myVideo {
+      position: center;
+      right: 0;
+      bottom: 0;
+      min-width: 50%;
+      min-height: 50%;
+    }
+
+    .content {
+      position: fixed;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      color: #f1f1f1;
+      width: 100%;
+      padding: 20px;
+    }
+
+    .myBtn {
+      width: 200px;
+      font-size: 18px;
+      padding: 10px;
+      border: none;
+      background: #000;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .myBtn:hover {
+      background: #ddd;
+      color: black;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .navbar {
+      width: 100%;
+      background-color: #555;
+      overflow: auto;
+    }
+
+    .navbar a {
+      padding: 12px;
+      text-decoration: none;
+      font-size: 17px;
+      margin: 10px;
+      display: inline-block;
+      color: white;
+      text-align: center;
+    }
+
+    .navbar a:hover {
+      background-color: #d0d315fa;
+      color: black;
+    }
+
+    .active {
+      background-color: #4a3a27;
+      color: white;
+    }
+
+    @media screen and (max-width: 500px) {
+      .navbar a {
+        float: none;
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <header>
+    <div class="navbar">
+      <a class="active" href="index.html"><i class="fas fa-paw"></i> Home</a>
+      <a href="Me.html"><i class="fas fa-camera"></i> Roscoes</a>
+      <a href="About Me.html"><i class="fas fa-atom"></i> About Me</a>
+      <a href="Roscoe.html"><i class="fas fa-dog"></i> Playtime</a>
+    </div>
+  </header>
+
+  <video autoplay muted loop id="bgvid" width="320" height="240">
+    <source src="images/65023932509__78F1804D-9ED9-409C-AAD8-98F6C6A7A629.MOV" type="video/webm">
+    <source src="images/65023932509__78F1804D-9ED9-409C-AAD8-98F6C6A7A629.MOV" type="video/mp4">
+  </video>
+
+  <div class="content">
+    <h2>Freedom</h2>
+    <button id="myBtn" onclick="myFunction()">pause</button>
+  </div>
+
+  <script>
+    var video = document.getElementById("bgvid");
+    var btn = document.getElementById("myBtn");
+
+    function myFunction() {
+      if (video.paused) {
+        video.play();
+        btn.innerHTML = "Pause";
+      } else {
+        video.pause();
+        btn.innerHTML = "Play";
+      }
+    }
+  </script>
+
+</body>
+
+</html>

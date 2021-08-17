@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Roscoe">
+
+    <title>Roscoe</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-replace-svg="nest"></script>
+
+  
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: #555;
+            overflow: auto;
+        }
+
+        .navbar a {
+            padding: 12px;
+            text-decoration: none;
+            font-size: 17px;
+            margin: 10px;
+            display: inline-block;
+            color: white;
+            text-align: center;
+        }
+
+        .navbar a:hover {
+            background-color: #d0d315fa;
+            color: black;
+        }
+
+        .active {
+            background-color: #4a3a27;
+            color: white;
+        }
+
+        @media screen and (max-width: 500px) {
+            .navbar a {
+                float: none;
+                display: block;
+            }
+        }
+
+        .container {
+            border: 5px;
+            background-origin: border-box;
+            font-size: 20px;
+        }
+
+        .container .img:hover {
+            margin: 10px 0 5px 10px;
+            border-radius: 15% 10% 15% 10%;
+            cursor: pointer;
+            transition: 0.5s;
+            opacity: 0.7;
+        }
+
+        .container .btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            background-color: #555;
+            color: white;
+            font-size: 16px;
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .container .btn:hover {
+            background-color: black;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.9);
+
+        }
+
+        .modal-content .caption {
+            margin: auto;
+            display: block;
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            display: block;
+            width: 90%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+            height: 150px;
+            -webkit-animation-name: zoom;
+            -webkit-animation-duration: 1.2s;
+            animation-name: zoom;
+            animation-duration: 1.0s;
+            border-radius: 15% 10% 15% 10%;
+            border: 5px solid transparent;
+        }
+
+
+        @-webkit-keyframes zoom {
+            from {
+                -webkit-transform: scale(0)
+            }
+
+            to {
+                -webkit-transform: scale(1)
+            }
+        }
+
+        @keyframes zoom {
+            from {
+                transform: scale(0)
+            }
+
+            to {
+                transform: scale(1)
+            }
+        }
+
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.6s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .modal-content {
+                width: 100%;
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            .container {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <a class="active" href="index.html"><i class="fas fa-paw"></i> Home</a>
+            <a href="Me.html"><i class="fas fa-camera"></i> Roscoes</a>
+            <a href="About Me.html"><i class="fas fa-atom"></i> About Me</a>
+            <a href="Roscoe.html"><i class="fas fa-dog"></i> Playtime</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div>
+            <h1>I'm just Misunderstood!</h1>
+            <p>I may bark. I am fierce. I am in LOVE!</p>
+        </div>
+
+    </div>
+
+
+
+    <div class="container">
+        <img id="myImg" src="images/roscoe15.JPG" alt="Roscoe & Betty Girl">
+    </div>
+
+
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="roscoe15">
+        <div id="caption"></div>
+    </div>
+
+    <script>
+        var modal = document.getElementById("myModal");
+
+        var img = document.getElementById("myImg");
+        var modalImg = document.getElementById("roscoe15");
+        var captionText = document.getElementById("caption");
+        img.onclick = function () {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+        }
+
+        var span = document.getElementsByClassName("close")[0];
+
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+    </script>
+
+
+</body>
+
+</html>

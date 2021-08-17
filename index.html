@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Roscoe">
+
+    <title>Roscoe</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="jquery.flipster.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-replace-svg="nest"></script>
+
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <a class="active" href="index.html"><i class="fas fa-paw"></i> Home</a>
+            <a href="Me.html"><i class="fas fa-camera"></i> Roscoes</a>
+            <a href="About Me.html"><i class="fas fa-atom"></i> About Me</a>
+            <a href="Roscoe.html"><i class="fas fa-dog"></i> Playtime</a>
+        </div>
+    </header>
+    
+    
+    <div class="hero">
+        <div class="carousel" style="position: center">
+            <ul>
+                <li><img src="images/roscoe1.JPG"></li>
+                <li><img src="images/roscoe12.JPG"></li>
+                <li><img src="images/roscoe13.JPG"></li>
+                <li><img src="images/roscoe8.JPG"></li>
+                <li><img src="images/roscoe11.JPG"></li>
+                <li><img src="images/roscoe6.JPG"></li>
+                <li><img src="images/roscoe22.JPG"></li>
+                <li><img src="images/roscoe20.JPG"></li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="jquery.flipster.min.js"></script>
+
+    <script>
+        $('.carousel').flipster({
+            style: 'carousel',
+            spacing: -0.2,
+            loop: true,
+            autoplay: 2000,
+        });
+    </script>
+
+</body>
+
+</html>
