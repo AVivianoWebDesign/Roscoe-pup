@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Roscoe">
+
+  <title>Roscoe</title>
+
+  <style>
+    video {
+      object-fit: cover;
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    .viewport-header {
+      position: relative;
+      height: 100vh;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h1 {
+      font-family: 'Syncopate', sans-serif;
+      color: #4a3a27;
+      text-transform: uppercase;
+      letter-spacing: 3vw;
+      line-height: 1.2;
+      font-size: 3vw;
+      text-align: center;
+    }
+
+    span {
+      display: block;
+      font-size: 10vw;
+      letter-spacing: -1.3vw;
+    }
+
+    .content {
+      font-family: 'Syncopate', sans-serif;
+      position: fixed;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      color: #4a3a27;
+      width: 100%;
+      padding: 20px;
+    }
+
+    #myBtn {
+      width: 200px;
+      font-size: 18px;
+      padding: 10px;
+      border: none;
+      background: #000;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    #myBtn:hover {
+      background: #ddd;
+      color: black;
+    }
+
+    /*
+
+- Fallback bokuh
+- webm?
+- poster=""
+- Full page always
+- Full page then scroll
+- Just header
+- Browser compat
+
+*/
+    .dropbtn {
+      background-color: #3498DB;
+      color: white;
+      padding: 16px;
+      font-size: 16px;
+      border: none;
+    }
+
+    .dropup {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropup-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 160px;
+      bottom: 50px;
+      z-index: 1;
+    }
+
+    .dropup-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropup-content a:hover {
+      background-color: #ccc
+    }
+
+    .dropup:hover .dropup-content {
+      display: block;
+    }
+
+    .dropup:hover .dropbtn {
+      background-color: #297fb9;
+    }
+ 
+    @media only screen and (max-width: 800px) {
+
+      /* For tablets: */
+      .main {
+        width: 100%;
+        padding: 0;
+      }
+
+      .right {
+        width: 100%;
+      }
+    }
+
+    @media only screen and (max-width: 800px) {
+
+      /* For mobile phones: */
+      .menu,
+      .main,
+      .right {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <video autoplay muted loop id="bgvid">
+    <source src="images/65023932509__78F1804D-9ED9-409C-AAD8-98F6C6A7A629.MOV" type="video/webm">
+    <source src="images/65023932509__78F1804D-9ED9-409C-AAD8-98F6C6A7A629.MOV" type="video/mp4">
+  </video>
+  <header class="viewport-header">
+    <h1>
+      <span>ROSCOE</span>
+    </h1>
+
+  </header>
+
+  <div class="content">
+    <h2>Freedom</h2>
+    <button id="myBtn" onclick="myFunction()">Play</button>
+  </div>
+
+  <script>
+    var video = document.getElementById("bgvid");
+    var btn = document.getElementById("myBtn");
+
+    function myFunction() {
+      if (video.paused) {
+        video.play();
+        btn.innerHTML = "Pause";
+      } else {
+        video.pause();
+        btn.innerHTML = "Play";
+      }
+    }
+  </script>
+
+  <div class="dropup">
+    <button class="dropbtn">Dropup</button>
+    <div class="dropup-content">
+      <a href="index.html">Home</a>
+      <a href="Me.html">Roscoes</a>
+      <a href="About Me.html">About Me</a>
+      <a href="Roscoe.html">Play Time</a>
+    </div>
+  </div>
+
+</body>
+
+</html>
