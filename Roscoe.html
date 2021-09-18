@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Roscoe">
+  <meta charset="UTF-8">
+
+  <title>Roscoe</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-replace-svg="nest"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: rgb(0, 0, 0);
+    }
+
+    .active {
+      background-color: #030303;
+      color: rgb(5, 105, 255);
+    }
+
+    li {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .header {
+      border-bottom: 1px solid #000000;
+    }
+
+    .hamburger {
+      display: none;
+    }
+
+    .bar {
+      display: block;
+      width: 25px;
+      height: 3px;
+      margin: 5px auto;
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+      background-color: #101010;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+    }
+
+    .nav-menu {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-item {
+      margin-left: 5rem;
+    }
+
+    .nav-link {
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: #e4e4e4;
+    }
+
+    .nav-link:hover {
+      color: #e9e9e9;
+    }
+
+   
+
+    @media only screen and (max-width: 768px) {
+      .nav-menu {
+        position:relative;
+        left: -100%;
+        top: 2rem;
+        flex-direction: column;
+        background-color: rgba(255, 248, 248, 0);
+        width: 100%;
+        border-radius: 50px;
+        text-align: center;
+        transition: 0.3s;
+    
+      }
+
+      .nav-menu.active {
+        left: 0;
+      }
+
+      .nav-item {
+        margin: 2.5rem 0;
+      }
+
+      .hamburger {
+        display: block;
+        cursor: pointer;
+      }
+
+      .hamburger.active .bar:nth-child(2) {
+        opacity: 90%;
+      }
+
+      .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+
+      .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+
+    }
+
+    .contact-section .form-control {
+      border: 1px solid rgba(5, 105, 255, 0.363);
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      box-shadow: none;
+    }
+
+    .contact-fields {
+      padding: 40px 0px 0px;
+    }
+
+    .email {
+      margin-bottom: 30px;
+      text-align: right;
+    }
+
+    .email h2,
+    h2 {
+      margin: top 10px;
+    }
+
+    .email a {
+      color: rgb(5, 105, 255);
+      font-size: 18px;
+    }
+
+    .contact-h2 {
+      color: rgb(5, 105, 255);
+      padding-top: 10px;
+    }
+
+    .contact-fields .form-group {
+      margin-bottom: 35px;
+    }
+
+    .contact-info {
+      margin-top: -40px;
+    }
+
+    .contact-fields .form-group input,
+    .contact-fields .form-group textarea {
+      font-size: 16px;
+    }
+
+    .btn {
+      font-size: 15px;
+      padding: 22px 46px 18px;
+      line-height: 1;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 0;
+      position: relative;
+      letter-spacing: 0.3px;
+    }
+
+    .btn.btn-accent {
+      background: #ffffff;
+      color: rgb(5, 105, 255);
+    }
+
+    .btn.btn-accent:hover {
+      background: #cde0e07e;
+    }
+
+
+    h2 {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 900;
+      color: rgb(5, 105, 255);
+      font-size: 35px;
+      letter-spacing: 1.25px;
+    }
+
+    .ct-section-head {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 900;
+      color: rgb(5, 105, 255);
+      font-size: 35px;
+      text-transform: uppercase;
+      padding-top: 45px;
+      letter-spacing: 1.25px;
+      margin-bottom: 5px;
+    }
+
+    .ct-section-header {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 900;
+      color: rgb(5, 105, 255);
+      font-size: 35px;
+      text-transform: uppercase;
+      text-align: center;
+      padding-top: 45px;
+      letter-spacing: 1.25px;
+      margin-bottom: 5px;
+    }
+
+
+    a {
+      -webkit-transition: all 250ms cubic-bezier(0.55, 0, 0.1, 1);
+      transition: all 250ms cubic-bezier(0.55, 0, 0.1, 1);
+    }
+
+    .btn.btn-dark {
+      background: #c2c2c2;
+      color: rgb(5, 105, 255);
+    }
+
+    .btn {
+      font-size: 15px;
+      padding: 22px 46px 18px;
+      line-height: 1;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 0;
+      position: relative;
+      letter-spacing: 0.3px;
+
+    }
+
+    @media screen and (min-width: 980px) {
+      .contact-info {
+        padding-left: 110px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <header class="header">
+    <nav class="navbar">
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="page1.html"><i class="fas fa-paw"></i> Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="index.html"><i class="fas fa-camera"></i> Roscoes</a>
+        </li>
+        <li class="nav-item">
+          <a href="About Me.html"><i class="fas fa-atom"></i> About Me</a>
+        </li>
+        <li class="nav-item">
+          <a href="Roscoe.html"><i class="fas fa-dog"></i> Playtime</a>
+        </li>
+      </ul>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
+  </header>
+
+
+  <div class="container">
+    <div class="contact-section">
+      <h2 class="ct-section-head">
+        CONTACT US
+      </h2>
+      <div class="row contact-fields">
+        <div class="col-md-8 left-form">
+          <form method="post" action="">
+
+            <div class="form-group">
+              <label class="sr-only" for="fname">First Name *</label>
+              <input class="required form-control" id="fname" name="fname" placeholder="First Name&nbsp;*" type="text">
+            </div>
+
+            <div class="form-group">
+              <label class="sr-only" for="lname">Last Name *</label>
+              <input class="required form-control" id="lname" name="lname" placeholder="Last Name&nbsp;*" type="text">
+            </div>
+
+            <div class="form-group">
+              <label class="sr-only" for="contactEmail">Email *</label>
+              <input class="required form-control h5-email" id="contactEmail" name="contactEmail"
+                placeholder="Email&nbsp;*" type="text">
+            </div>
+
+            <div class="form-group">
+              <label class="sr-only" for="contactPhone">Phone *</label>
+              <input class="required form-control h5-phone" id="contactPhone" name="contactPhone"
+                placeholder="Phone&nbsp;*" type="text">
+            </div>
+
+            <div class="form-group">
+              <label class="sr-only" for="comment">Type your message here</label>
+              <textarea class="required form-control" id="comment" name="comment"
+                placeholder="Type your message here&nbsp;*" rows="6"></textarea>
+            </div>
+
+            <button class="btn btn-accent" type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="email">
+      <h2>Email</h2>
+      <a href="mailto:chonz.avila@gmail.com">chonz.avila@gmail.com</a>
+    </div>
+  </div>
+
+ 
+
+
+</body>
+<script>
+  const hamburger = document.querySelector(".hamburger");
+  const navMenu = document.querySelector(".nav-menu");
+
+  hamburger.addEventListener("click", mobileMenu);
+
+  function mobileMenu() {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+  }
+
+</script>
+</html>
