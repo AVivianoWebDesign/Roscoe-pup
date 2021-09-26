@@ -1,0 +1,133 @@
+
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background-color: black;
+      color: white;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: darkred;
+    }
+
+    .header {
+      border-bottom: 1px solid #000000;
+    }
+
+    .hamburger {
+      display: none;
+    }
+
+    .bar {
+      display: block;
+      width: 25px;
+      height: 3px;
+      margin: 5px auto;
+      background-color: #d40000;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+    }
+
+    .nav-menu {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-item {
+      margin-left: 2rem;
+    }
+
+    .nav-link {
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: #e4e4e48f;
+    }
+
+    .nav-link:hover {
+      color: #e9e9e970;
+    }
+
+    @media only screen and (max-width: 768px) {
+      .nav-menu {
+        position: relative;
+        left: -100%;
+        top: 2rem;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+      }
+
+      .nav-menu.active {
+        left: 0;
+      }
+
+      .nav-item {
+        margin: 2rem;
+      }
+
+      .hamburger {
+        display: block;
+        cursor: pointer;
+      }
+
+      .hamburger.active .bar:nth-child(2) {
+        opacity: 100%;
+      }
+
+      .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+
+      .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+
+    }
+
+.hero{
+    padding-left: 15px;
+    padding-right: 5px;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero .carousel{
+    position: center;
+    width: 270px;
+    height: 100vh auto 50%;
+    overflow: visible;
+}
+.carousel img{
+    border-radius: 15px 5px 15px;
+    border: 4px solid transparent;
+    position: center;
+    
+    background-origin: border-box;
+    background-clip: content-box,border-box;
+}
+
