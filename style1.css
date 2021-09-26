@@ -140,8 +140,8 @@
     font-weight: 900;
     mix-blend-mode: multiply;
 }
-.animate__animated.animate__flipInX{
-    --animate-duration: 6s;
+.animate__animated.animate__lightSpeedInLeft{
+    --animate-duration: 8s;
 }
 @media only screen and (max-width: 700px) {
      .container{
