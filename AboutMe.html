@@ -131,8 +131,7 @@
 
     .container img {
       margin: auto;
-      padding: unset;
-      object-position: center;
+      padding: 0;
 
     }
 
@@ -140,14 +139,13 @@
     @media (max-width: 700px) {
       .navbar a {
         padding: 10px 30px;
-        animation-play-state: paused;
       }
     }
 
     @media screen and (min-width: 980px) {
       .container img {
         padding-left: 100px;
-        padding-right: 110px;
+        padding-right: 100px;
       }
     }
   </style>
@@ -185,8 +183,6 @@
   <div class="container">
     <img src="images/roscoe665.png">
   </div>
-
-</body>
 <script>
   const hamburger = document.querySelector(".hamburger");
   const navMenu = document.querySelector(".nav-menu");
@@ -199,5 +195,7 @@
   }
 
 </script>
+</body>
+
 
 </html>
