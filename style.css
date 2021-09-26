@@ -104,6 +104,12 @@
         transform: translateY(-8px) rotate(-45deg);
       }
 
+    @media (max-width: 700px) {
+      .navbar a {
+        padding: 10px 30px;
+        animation-play-state: paused;
+      }
+    }
     }
 
 .hero{
