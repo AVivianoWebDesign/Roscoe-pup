@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = $_POST['message'];
 
     // Set up email content
-    $to = "drety9@gmail.com"; // Change this to your email address
+    $to = "mailto: drety9@gmail.com"; // Change this to your email address
     $subject = "New message from Timeshare Cancellation Landing Page";
     $body = "Name: $name\n";
     $body .= "Email: $email\n";
