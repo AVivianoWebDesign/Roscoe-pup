@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeshare Cancellation Landing Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Timeshare Cancellation Landing Page</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h2>Discover the Truth About Timeshare Cancellation</h2>
+            <p>Get expert advice and assistance in cancelling your timeshare.</p>
+            <button id="cta-btn">Get Free Consultation</button>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>Timeshare Cancellation Facts</h2>
+            <p>Timeshare cancellation can be complex. Here are some important facts:</p>
+            <ul>
+                <li>Timeshare contracts often come with binding agreements that make cancellation difficult.</li>
+                <li>Many timeshare companies use aggressive sales tactics, making it challenging for owners to cancel.
+                </li>
+                <li>Timeshare exit companies can assist in navigating the cancellation process and legally terminating
+                    contracts.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <p>We provide comprehensive timeshare cancellation services, including:</p>
+            <ul>
+                <li>Legal consultation and contract assessment.</li>
+                <li>Negotiation with timeshare companies on your behalf.</li>
+                <li>Representation in legal proceedings if necessary.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>For a free consultation, please fill out the form below:</p>
+            <form id="contact-form" action="submit_form.php" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <div id="cta-popup" class="hidden">
+        <div id="popup-content">
+            <span id="close-btn">&times;</span>
+            <h2>Get Free Consultation</h2>
+            <p>Fill out the form below and our experts will get in touch with you.</p>
+            <form id="popup-form" action="submit_form.php" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Timeshare Cancellation Experts. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
